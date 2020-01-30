@@ -1,0 +1,23 @@
+ion-title{
+    width: 100%;
+    text-align: center;
+}
+body{
+    background: black;
+    color: white;
+}
+h1{
+    position: absolute;
+    top: 10%;
+    color: white;
+}
+ion-content{
+    --background: transparent; 
+    position: relative;
+    left: 5%;
+    color: white;
+}
+ion-toolbar{
+    --background: rgb(20, 20, 20);
+    color: white;
+}

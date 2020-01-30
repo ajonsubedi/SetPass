@@ -1,0 +1,17 @@
+<ion-toolbar>
+  <ion-title>{{appName}}</ion-title>
+  <ion-button fill="clear" color="danger" slot="end" class="closeBtn" (click)="dismiss()">Close</ion-button>
+  <ion-button fill="clear" color="success" slot="start" class="saveBtn" (click)="save()">Save</ion-button>
+</ion-toolbar>
+<body>
+  <img class="img" src="{{iconUrl}}">
+  <ion-content>
+      <div class="inputs">
+        <ion-input *ngIf="readonly == true" id="email" readonly="true" [(ngModel)]="email" ><ion-button (click)="editEmail()" fill="undefined" slot="end" class="copy"><ion-icon name="create"></ion-icon></ion-button></ion-input>
+        <ion-input *ngIf="readonly == false" id="email" [(ngModel)]="email"><ion-button (click)="editEmail()" fill="undefined" slot="end" class="copy"><ion-icon name="create"></ion-icon></ion-button></ion-input>
+        <ion-input readonly="true" id="pass" type="text" [(ngModel)]="password"><ion-button fill="undefined" (click)="copyPass()" slot="end" class="copy"><ion-icon name="copy"></ion-icon></ion-button></ion-input>
+      </div>
+    <password-strength-meter class="strengthMeter" [password]="password" [minPasswordLength]="64"></password-strength-meter>
+    <ion-button (click)="generatePass()" class="genPass"color="danger" ><img class="genImg "src="../../../assets/generateXS.png">Generate!</ion-button>
+  </ion-content>
+</body>
